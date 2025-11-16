@@ -34,10 +34,10 @@ When the user sends input:
 4. The conversation is appended to chat_content.txt
 
 Example Tool:
-<pre> ```python 
-  def say_hello(name): 
-    return f"Hello, {name}!" 
-``` </pre>
+```python 
+def say_hello(name): 
+  return f"Hello, {name}!" 
+``` 
 
 ---
 
