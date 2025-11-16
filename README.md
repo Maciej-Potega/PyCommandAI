@@ -35,8 +35,11 @@ When the user sends input:
 
 Example Tool:
 ```python 
-def say_hello(name): 
-  return f"Hello, {name}!" 
+@tool
+def say_hello(name: str) -> str:
+    """Useful for greeting a user"""
+    #print("(Greeting) tool has been called!")
+    return f"Hi {name}! I hope you're doing well today!\n" 
 ``` 
 ---
 
