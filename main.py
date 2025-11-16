@@ -50,8 +50,8 @@ def Chat_With_AI():
                         print(ai_response)
 
         with open(CHAT_CONTENT_FILE, mode="a") as chat_file:
-            chat_file.write(f"You: {user_input}\n")
-            chat_file.write(f"\nAssistant: {ai_response}\n\n")
+            chat_file.write(f"You: {user_input}\n\n")
+            chat_file.write(f"Assistant: {ai_response}\n\n")
 
         if(end_chat["quit"] == True):
             print(f"\nend_chat status: {end_chat["quit"]}")
