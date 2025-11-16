@@ -1,20 +1,24 @@
 # 🤖 AI Command-Line Assistant
 
-A lightweight terminal AI powered by LangChain + tool calling
+**A lightweight terminal AI powered by LangChain + tool calling**
 
-This project is a simple but powerful example of how to build an AI assistant that works directly in the command line.
-It supports streaming responses, function calling, and custom tools that allow the AI to perform real actions.
+This project is a simple but powerful example of how to build an AI assistant that works **directly in the command line**.
+It supports **streaming responses**, **function calling**, and **custom tools** that allow the **AI to perform real actions**.
 
 Perfect as a learning project, a base for your own AI assistant, or a reference for LangChain tool integration.
 
+---
+
 # 🧠 Features
 
-✔️ Real-time streaming output
-✔️ Persistent conversation history
-✔️ Tool/function calling support
-✔️ Custom Python functions the AI can execute
-✔️ Clean modular structure
-✔️ Easy to extend with new tools
+* ✔️ Real-time streaming output
+* ✔️ Persistent conversation history
+* ✔️ Tool/function calling support
+* ✔️ Custom Python functions the AI can execute
+* ✔️ Clean modular structure
+* ✔️ Easy to extend with new tools
+
+---
 
 # ⚙️ How It Works
 
@@ -30,9 +34,14 @@ When the user sends input:
 4. The conversation is appended to chat_content.txt
 
 Example Tool:
-<pre> ```python def say_hello(name): return f"Hello, {name}!" ``` </pre>
+<pre> ```python 
+  def say_hello(name): 
+    return f"Hello, {name}!" 
+``` </pre>
 
-# 🛠️ Currently Tools Available
+---
+
+# 🛠️ Currently Tools Available:
 
 🔹 say_hello(name: str)
 
@@ -45,6 +54,8 @@ Returns the current system time.
 🔹 exit_chat()
 
 Sets a flag to safely end the chat loop.
+
+---
 
 # 🚀 Getting Started
 
@@ -77,6 +88,8 @@ Create a .env file inside the project folder:
 * You: quit
 
 * Assistant: Goodbye user!
+
+---
 
 # 📅 Roadmap / Future Ideas
 
