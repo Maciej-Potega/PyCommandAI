@@ -1,4 +1,4 @@
-# 🤖 AI Command-Line Assistant
+## 🤖 AI Command-Line Assistant
 
 **A lightweight terminal AI powered by LangChain + tool calling**
 
@@ -9,7 +9,7 @@ Perfect as a learning project, a base for your own AI assistant, or a reference 
 
 ---
 
-# 🧠 Features
+## 🧠 Features
 
 * ✔️ Real-time streaming output
 * ✔️ Persistent conversation history
@@ -20,7 +20,7 @@ Perfect as a learning project, a base for your own AI assistant, or a reference 
 
 ---
 
-# ⚙️ How It Works
+## ⚙️ How It Works
 
 The system is built around a LangChain Agent using function calling.
 When the user sends input:
@@ -31,17 +31,16 @@ When the user sends input:
 
 3. The result is streamed back to the user
 
-4. The conversation is appended to chat_content.txt
+4. The conversation is appended to **chat_file.txt**
 
 Example Tool:
 ```python 
 def say_hello(name): 
   return f"Hello, {name}!" 
 ``` 
-
 ---
 
-# 🛠️ Currently Tools Available:
+## 🛠️ Currently Tools Available:
 
 🔹 say_hello(name: str)
 
@@ -57,11 +56,11 @@ Sets a flag to safely end the chat loop.
 
 ---
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
 1️⃣ Install following dependencies:
 
-⚠️ IMPORTANT - All the dependencie were installed using UV instead of pip
+**⚠️ IMPORTANT** - All the **dependencie were installed using UV** instead of pip
 
 - uv add (List of the dependencies)
 
@@ -69,13 +68,17 @@ Sets a flag to safely end the chat loop.
 
 Create a .env file inside the project folder:
 
-- GOOGLE_API_KEY=your_key_here
+```env
+GOOGLE_API_KEY=your_key_here
+```
 
 3️⃣ Run the assistant:
 
-- uv run main.py
+```python
+uv run main.py
+```
 
-# 🧪 Example Session
+## 🧪 Example Session
 
 * You: What time is it?
 
@@ -91,7 +94,7 @@ Create a .env file inside the project folder:
 
 ---
 
-# 📅 Roadmap / Future Ideas
+## 📅 Roadmap / Future Ideas
 
  * Note-taking tool
 
