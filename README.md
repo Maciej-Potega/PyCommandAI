@@ -1,4 +1,4 @@
-## 🤖 AI Command-Line Assistant
+# 🤖 AI Command-Line Assistant
 
 **A lightweight terminal AI powered by LangChain + tool calling**
 
@@ -11,12 +11,12 @@ Perfect as a learning project, a base for your own AI assistant, or a reference 
 
 ## 🧠 Features
 
-* ✔️ Real-time streaming output
-* ✔️ Persistent conversation history
-* ✔️ Tool/function calling support
-* ✔️ Custom Python functions the AI can execute
-* ✔️ Clean modular structure
-* ✔️ Easy to extend with new tools
+✔️ Real-time streaming output   
+✔️ Persistent conversation history   
+✔️ Tool/function calling support   
+✔️ Custom Python functions the AI can execute   
+✔️ Clean modular structure   
+✔️ Easy to extend with new tools
 
 ---
 
@@ -58,13 +58,15 @@ Sets a flag to safely end the chat loop.
 
 ## 🚀 Getting Started
 
-1️⃣ Install following dependencies:
+### 1️⃣ Install following dependencies:
 
 **⚠️ IMPORTANT** - All the **dependencie were installed using UV** instead of pip
 
-- uv add (List of the dependencies)
+```python
+uv add (List of the dependencies)
+```
 
-2️⃣ Add your API key:
+### 2️⃣ Add your API key:
 
 Create a .env file inside the project folder:
 
@@ -72,7 +74,7 @@ Create a .env file inside the project folder:
 GOOGLE_API_KEY=your_key_here
 ```
 
-3️⃣ Run the assistant:
+### 3️⃣ Run the assistant:
 
 ```python
 uv run main.py
