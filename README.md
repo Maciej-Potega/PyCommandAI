@@ -1,22 +1,26 @@
 # 🤖 AI Command-Line Assistant
 
-A lightweight terminal AI powered by LangChain + tool calling
+**A lightweight terminal AI powered by LangChain + tool calling**
 
-This project is a simple but powerful example of how to build an AI assistant that works directly in the command line.
-It supports streaming responses, function calling, and custom tools that allow the AI to perform real actions.
+This project is a simple but powerful example of how to build an AI assistant that works **directly in the command line**.
+It supports **streaming responses**, **function calling**, and **custom tools** that allow the **AI to perform real actions**.
 
 Perfect as a learning project, a base for your own AI assistant, or a reference for LangChain tool integration.
 
-# 🧠 Features
+---
 
-✔️ Real-time streaming output
-✔️ Persistent conversation history
-✔️ Tool/function calling support
-✔️ Custom Python functions the AI can execute
-✔️ Clean modular structure
+## 🧠 Features
+
+✔️ Real-time streaming output   
+✔️ Persistent conversation history   
+✔️ Tool/function calling support   
+✔️ Custom Python functions the AI can execute   
+✔️ Clean modular structure   
 ✔️ Easy to extend with new tools
 
-# ⚙️ How It Works
+---
+
+## ⚙️ How It Works
 
 The system is built around a LangChain Agent using function calling.
 When the user sends input:
@@ -27,12 +31,19 @@ When the user sends input:
 
 3. The result is streamed back to the user
 
-4. The conversation is appended to chat_content.txt
+4. The conversation is appended to **chat_file.txt**
 
 Example Tool:
-<pre> ```python def say_hello(name): return f"Hello, {name}!" ``` </pre>
+```python 
+@tool
+def say_hello(name: str) -> str:
+    """Useful for greeting a user"""
+    #print("(Greeting) tool has been called!")
+    return f"Hi {name}! I hope you're doing well today!\n" 
+``` 
+---
 
-# 🛠️ Currently Tools Available
+## 🛠️ Currently Tools Available:
 
 🔹 say_hello(name: str)
 
@@ -46,25 +57,33 @@ Returns the current system time.
 
 Sets a flag to safely end the chat loop.
 
-# 🚀 Getting Started
+---
 
-1️⃣ Install following dependencies:
+## 🚀 Getting Started
 
-⚠️ IMPORTANT - All the dependencie were installed using UV instead of pip
+### 1️⃣ Install following dependencies:
 
-- uv add (List of the dependencies)
+**⚠️ IMPORTANT** - All the **dependencie were installed using UV** instead of pip
 
-2️⃣ Add your API key:
+```python
+uv add (List of the dependencies)
+```
+
+### 2️⃣ Add your API key:
 
 Create a .env file inside the project folder:
 
-- GOOGLE_API_KEY=your_key_here
+```env
+GOOGLE_API_KEY=your_key_here
+```
 
-3️⃣ Run the assistant:
+### 3️⃣ Run the assistant:
 
-- uv run main.py
+```python
+uv run main.py
+```
 
-# 🧪 Example Session
+## 🧪 Example Session
 
 * You: What time is it?
 
@@ -78,7 +97,9 @@ Create a .env file inside the project folder:
 
 * Assistant: Goodbye user!
 
-# 📅 Roadmap / Future Ideas
+---
+
+## 📅 Roadmap / Future Ideas
 
  * Note-taking tool
 
