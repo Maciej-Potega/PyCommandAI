@@ -1,5 +1,4 @@
 import json
-from os import remove #Just temporarily
 from langchain_core.messages import HumanMessage # Represents a message from the user (human) sent to the language model.
 
 #My imports
@@ -31,7 +30,7 @@ def Chat_With_AI():
             #print(chunk) <-- Debug how the agent makes decisions
 
             if "agent" in chunk and "messages" in chunk["agent"]:
-                
+                    
                 for message in chunk["agent"]["messages"]:
 
                     func_call = message.additional_kwargs.get("function_call")
@@ -42,22 +41,22 @@ def Chat_With_AI():
                         func_args = json.loads(func_call.get("arguments", "{}") or "{}")
 
                         ai_response = Execute_Tool_Function(func_name, func_args)
-                        print(ai_response, end="")
                         tool_executed = True
                     
                     elif(not tool_executed):
                         ai_response = message.content
-                        print(ai_response)
-
+        
+        print(ai_response)                
+                        
         with open(CHAT_CONTENT_FILE, mode="a") as chat_file:
-            chat_file.write(f"You: {user_input}\n\n")
-            chat_file.write(f"Assistant: {ai_response}\n\n")
 
-        if(end_chat["quit"] == True):
-            print(f"\nend_chat status: {end_chat["quit"]}")
-            break
-        else:
-            print(f"end_chat status: {end_chat["quit"]}")
+            chat_file.write(f"You: {user_input}\n\n")
+
+            if(end_chat["quit"] == True):
+                chat_file.write(f"Assistant: {ai_response}")
+                break
+            else:
+                chat_file.write(f"Assistant: {ai_response}\n\n")
 
 if __name__ == "__main__":
     Chat_With_AI()
