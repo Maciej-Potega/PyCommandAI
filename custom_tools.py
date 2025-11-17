@@ -5,14 +5,13 @@ from inspect import getmembers
 
 import datetime as dateT
 
-
 end_chat = {"quit": False}
 
 @tool
 def say_hello(name: str) -> str:
     """Useful for greeting a user"""
     #print("(Greeting) tool has been called!")
-    return f"Hi {name}! I hope you're doing well today!\n"
+    return f"Hi {name}! I hope you're doing well today!"
 
 @tool
 def check_time() -> None:
@@ -51,11 +50,11 @@ def Execute_Tool_Function(func_name: str, func_args: dict):
     
     elif(func_name == "check_time"):
         current_time = dateT.datetime.now().strftime("%H:%M:%S")
-        return f"The current local time is: {current_time}\n"
+        return f"The current local time is: {current_time}"
     
     elif(func_name == "exit_chat"):
         end_chat["quit"] = True
-        return "Goodbye user!\n"
+        return "Goodbye user!"
 
 
 
