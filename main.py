@@ -2,9 +2,10 @@ import json
 from langchain_core.messages import HumanMessage # Represents a message from the user (human) sent to the language model.
 
 #My imports
-from setup import agent_executor, CHAT_CONTENT_FILE
-from custom_tools import Execute_Tool_Function, end_chat
-
+from setup import model_active
+if(model_active["active"]):
+    from setup import agent_executor, CHAT_CONTENT_FILE
+    from custom_tools import Execute_Tool_Function, end_chat
 
 def Chat_With_AI():
 
@@ -35,7 +36,7 @@ def Chat_With_AI():
 
                     func_call = message.additional_kwargs.get("function_call")
 
-                    if(func_call is not None):
+                    if func_call is not None:
 
                         func_name = func_call.get("name")
                         func_args = json.loads(func_call.get("arguments", "{}") or "{}")
@@ -43,7 +44,7 @@ def Chat_With_AI():
                         ai_response = Execute_Tool_Function(func_name, func_args)
                         tool_executed = True
                     
-                    elif(not tool_executed):
+                    elif not tool_executed:
                         ai_response = message.content
         
         print(ai_response)                
@@ -52,7 +53,7 @@ def Chat_With_AI():
 
             chat_file.write(f"You: {user_input}\n\n")
 
-            if(end_chat["quit"] == True):
+            if end_chat["quit"]:
                 chat_file.write(f"Assistant: {ai_response}")
                 break
             else:
