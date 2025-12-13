@@ -42,7 +42,7 @@ plugins_loaded["loaded"] = True
 def Execute_Tool_Function(func_name: str, func_args: dict):
 
     global end_chat
-    
+
     if func_name == "say_hello":
         return say_hello.invoke(func_args)
     

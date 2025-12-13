@@ -10,7 +10,7 @@ from dotenv import load_dotenv # Loads environment variables from a .env file (e
 from custom_tools import plugins_loaded
 
 #AI model name setup
-AI_MODEL_NAME = "gemini-2.5-flash-lite"
+AI_MODEL_NAME = "gemini-2.5-flash"
 
 #API Setup
 load_dotenv()
@@ -48,7 +48,7 @@ def Model_Setup():
         from custom_tools import active_tools
         global agent_executor
         
-        model = ChatGoogleGenerativeAI(temperature=0, model=AI_MODEL_NAME, google_api_key=GOOGLE_API_KEY) #Temperature 0 to make sure we don't want it to be any randomness
+        model = ChatGoogleGenerativeAI(temperature=0, model=AI_MODEL_NAME, google_api_key=GOOGLE_API_KEY, max_retries=0) #Temperature 0 to make sure we don't want it to be any randomness
         custom_prompt = ChatPromptTemplate.from_messages([("system", RULES_FOR_LANGCHAIN),("human", "{messages}")])
         agent_executor = create_react_agent(model=model, tools=active_tools, prompt=custom_prompt)
     
