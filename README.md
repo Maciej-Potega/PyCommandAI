@@ -45,7 +45,7 @@ def say_hello(name: str) -> str:
 
 ## 🧩 Tool Execution Design
 
-This project intentionally **does NOT allow the agent to execute tools automatically**, because **Langchain is not always able and consistent in executing special functions by itself**.
+This project intentionally **does NOT allow the agent to execute tools automatically**, because **Langchain is not always able and consistent in executing special functions by itself** → therefore the model is treated as a **decision engine**, **not an execution engine**.
 
 Instead:
 
