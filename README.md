@@ -69,7 +69,7 @@ your_drive:\your_directory\...\PyCommandAI
 
 ### 2️⃣ Install following dependencies with terminal:
 
-```cmd
+```bash
 pip install langgraph langchain langchain-google-genai google-generativeai google-api-core python-dotenv
 ```
 
@@ -82,15 +82,22 @@ GOOGLE_API_KEY=your_key_here
 ```
 
 Where do I get Google API key?
-```html
-https://aistudio.google.com/app/api-keys
-```
+
+1. Navigate to [Google](https://aistudio.google.com/app/api-keys)
+2. Click "Create API key" button
+3. Select "Create Project" and name your project
+4. Click "Create API key" button once more
+5. Select your project, name your API key & click "Create key"
+6. Copy the key and paste it inside .env file
+
 
 ### 4️⃣ Run the assistant with terminal:
 
 ```python
 python main.py
 ```
+
+---
 
 ## 🧪 Example Session
 
