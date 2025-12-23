@@ -1,8 +1,10 @@
+#Setup frameworks
 from langchain.tools import tool # Allows creating custom “tools” (functions) that the agent can use.
 from langchain_core.tools import StructuredTool
 from sys import modules
 from inspect import getmembers
 
+#Tool-necessary frameworks
 import datetime as dateT
 
 end_chat = {"quit": False}

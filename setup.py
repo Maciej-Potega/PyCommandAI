@@ -1,3 +1,4 @@
+#Setup frameworks
 import os
 from google import genai
 from langchain_google_genai import ChatGoogleGenerativeAI # Enables the use of Gemini models (e.g., Gemini) within LangChain.
@@ -6,11 +7,11 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv # Loads environment variables from a .env file (e.g., API keys or project configuration).
 #from langchain.memory import ChatMessageHistory as history
 
-#My imports
+#Local imports
 from custom_tools import plugins_loaded
 
 #AI model name setup
-AI_MODEL_NAME = "gemini-2.5-flash"
+AI_MODEL_NAME = "gemini-2.5-flash-lite"
 
 #API Setup
 load_dotenv()

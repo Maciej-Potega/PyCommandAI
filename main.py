@@ -1,8 +1,9 @@
+#Setup frameworks
 import json
 from langchain_core.messages import HumanMessage # Represents a message from the user (human) sent to the language model.
 from google.api_core.exceptions import ResourceExhausted
 
-#My imports
+#Local imports
 from setup import AI_MODEL_NAME, model_active
 if(model_active["active"]):
     from setup import agent_executor, CHAT_CONTENT_FILE
@@ -10,7 +11,7 @@ if(model_active["active"]):
 
 def Chat_With_AI():
 
-    global end_chat
+    global AI_MODEL_NAME, end_chat
 
     while True:
 
@@ -51,12 +52,10 @@ def Chat_With_AI():
             print(ai_response) 
 
         except ResourceExhausted:
-            global AI_MODEL_NAME
-            print(f"⚠️ | Today's request limit for this specific AI-model ({AI_MODEL_NAME}) has expried!")
-            print("✅ | Try to change to a different AI-model in setup.py file!")
+            print(f"⚠️ | Today's request limit for this specific AI-model ({AI_MODEL_NAME}) has expired!")
+            print("\n✅ | Try to change to a different AI-model in setup.py file!\n")
             break
         
-                       
         with open(CHAT_CONTENT_FILE, mode="a") as chat_file:
 
             chat_file.write(f"You: {user_input}\n\n")
