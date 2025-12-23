@@ -116,6 +116,18 @@ Assistant: Goodbye user!
 ```
 ---
 
+## ⚠️ Help! My request limit expired! What do I do?
+
+Replace variable AI_MODEL_NAME with a different model name:
+
+```python
+AI_MODEL_NAME = "gemini-2.5-flash-lite"
+```
+
+Where do I find different model names?
+
+You can find them either on [Google AI Studio](https://aistudio.google.com/app/usage?timeRange=this-month) - in "Rate Limit" section or [Firebase](https://firebase.google.com/docs/ai-logic/models) 
+
 ## 📅 Roadmap / Future Ideas
 
 ### 🎯 Priorities 
