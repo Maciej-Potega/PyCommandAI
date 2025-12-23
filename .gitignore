@@ -216,5 +216,4 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Personal
-pyproject.toml
 chat_file.txt

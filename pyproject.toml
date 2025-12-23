@@ -1,8 +1,6 @@
 [project]
-name = "ai-project1"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+name = "PyCommandAI"
+version = "1.0.0"
 requires-python = ">=3.13"
 dependencies = [
     "google-genai>=1.44.0",
