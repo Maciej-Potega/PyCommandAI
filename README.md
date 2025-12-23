@@ -43,6 +43,29 @@ def say_hello(name: str) -> str:
 ```
 ---
 
+## 🧩 Tool Execution Design
+
+This project intentionally **does NOT allow the agent to execute tools automatically**, because **Langchain is not always able and consistent in executing special functions by itself**.
+
+Instead:
+
+**1. The agent emits a function_call decision**
+
+**2. Python code intercepts it**
+
+**3. The correct tool is executed manually**
+
+**4. The result is injected back into the response stream**
+
+This approach:
+
+**✔️ avoids partial or inconsistent tool execution**  
+**✔️ gives full control over side effects**  
+**✔️ prevents infinite loops and recursion errors**  
+**✔️ makes debugging predictable**
+
+---
+
 ## 🛠️ Currently Tools Available:
 
 **🔹 say_hello(name: str)**
@@ -56,6 +79,16 @@ Returns the current system time.
 **🔹 exit_chat()**
 
 Sets a flag to safely end the chat loop.
+
+---
+
+## ❓ Why I made this project?
+
+This project was created as a learning exercise to deeply understand:
+
+* **How LLM agents reason**
+* **How tool calling works under the hood**
+* **How to safely integrate AI with real system actions**
 
 ---
 
