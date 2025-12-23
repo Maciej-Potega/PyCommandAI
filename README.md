@@ -81,14 +81,14 @@ Create a .env file inside the project folder:
 GOOGLE_API_KEY=your_key_here
 ```
 
-Where do I get Google API key?
+**Where do I get Google API key?**
 
-1. Navigate to [Google](https://aistudio.google.com/app/api-keys)
-2. Click "Create API key" button
-3. Select "Create Project" and name your project
-4. Click "Create API key" button once more
-5. Select your project, name your API key & click "Create key"
-6. Copy the key and paste it inside .env file
+1. Navigate to [Google AI Studio](https://aistudio.google.com/app/api-keys)
+2. Click **"Create API key"** button
+3. Select **"Create Project"** and name your project
+4. Click **"Create API key"** button once more
+5. **Select your project**, **name your API key** & click **"Create key"**
+6. Copy and paste the key inside **.env file**
 
 
 ### 4️⃣ Run the assistant with terminal:
