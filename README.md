@@ -45,15 +45,15 @@ def say_hello(name: str) -> str:
 
 ## 🛠️ Currently Tools Available:
 
-🔹 say_hello(name: str)
+**🔹 say_hello(name: str)**
 
 Greets the user with a friendly message.
 
-🔹 check_time()
+**🔹 check_time()**
 
 Returns the current system time.
 
-🔹 exit_chat()
+**🔹 exit_chat()**
 
 Sets a flag to safely end the chat loop.
 
@@ -63,7 +63,7 @@ Sets a flag to safely end the chat loop.
 
 ### 1️⃣ Navigate to the project directory with terminal:
 
-```txt
+```bash
 your_drive:\your_directory\...\PyCommandAI
 ```
 
