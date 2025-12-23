@@ -11,27 +11,27 @@ Perfect as a learning project, a base for your own AI assistant, or a reference 
 
 ## 🧠 Features
 
-✔️ Real-time streaming output   
-✔️ Persistent conversation history   
-✔️ Tool/function calling support   
-✔️ Custom Python functions the AI can execute   
-✔️ Clean modular structure   
-✔️ Easy to extend with new tools
+✔️ **Real-time streaming output**   
+✔️ **Persistent conversation history**   
+✔️ **Tool/function calling support**   
+✔️ **Custom Python functions the AI can execute**   
+✔️ **Clean modular structure**   
+✔️ **Easy to extend with new tools**
 
 ---
 
 ## ⚙️ How It Works
 
-The system is built around Gemini API (for now) with LangChain Agent using function calling.
+The system is **built around Gemini API (for now) with LangChain Agent using function calling**.
 When the user sends input:
 
-1. The model decides whether to answer normally or call a tool
+**1. The model decides whether to answer normally or call a tool**
 
-2. If a tool is called → the Python function is executed
+**2. If a tool is called → the Python function is executed**
 
-3. The result is streamed back to the user
+**3. The result is streamed back to the user**
 
-4. The conversation is appended to **chat_file.txt** (Which is automatically created when executed script for the first time or if file is not detected in the project directory)
+**4. The conversation is appended to chat_file.txt (Which is automatically created when executed script for the first time or if file is not detected in the project directory)**
 
 Example Tool:
 ```python 
@@ -69,7 +69,7 @@ your_drive:\your_directory\...\PyCommandAI
 
 ### 2️⃣ Install following dependencies with terminal:
 
-```python
+```cmd
 pip install langgraph langchain langchain-google-genai google-generativeai google-api-core python-dotenv
 ```
 
@@ -79,6 +79,11 @@ Create a .env file inside the project folder:
 
 ```env
 GOOGLE_API_KEY=your_key_here
+```
+
+Where do I get Google API key?
+```html
+https://aistudio.google.com/app/api-keys
 ```
 
 ### 4️⃣ Run the assistant with terminal:
@@ -108,25 +113,25 @@ Assistant: Goodbye user!
 
 ### 🎯 Priorities 
  
- * File-reading tool
+ * **File-reading tool**
 
- * System info tool
+ * **System info tool**
  
- * Note-taking tool
+ * **Note-taking tool**
 
- * Math/calc tool
+ * **Math/calc tool**
 
- * Local model support (f.e Ollama)
+ * **Local model support (f.e Ollama)**
 
- * Memory embeddings (extend it's quality and stability)
+ * **Memory embeddings (extend it's quality and stability)**
 
- * GUI Support
+ * **GUI Support**
 
 ### 🎉 4FUN Utilities
 
- * Joke generator tool
+ * **Joke generator tool**
 
- * Mini-games (coin flip, dice roll etc.)
+ * **Mini-games (coin flip, dice roll etc.)**
    
  
 
