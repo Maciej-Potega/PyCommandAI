@@ -53,7 +53,7 @@ Instead:
 
 **2. Python code intercepts it**
 
-**3. The correct tool is executed manually**
+**3. In most cases the correct tool is executed manually**
 
 **4. The result is injected back into the response stream**
 
@@ -63,6 +63,10 @@ This approach:
 **✔️ gives full control over side effects**  
 **✔️ prevents infinite loops and recursion errors**  
 **✔️ makes debugging predictable**
+
+### ⚠️ IMPORTANT NOTE!
+
+Inside `setup.py` script, variable `RULES_FOR_LANGCHAIN` is **just a prompt guidance for Langchain**, so it can **format the responses in the better way**. **IT DOESN'T 100% GUARANTEE** that the agent will **always select the correct tool**, **execute it at the right moment**, or **avoid emitting fallback responses when tool execution is intentionally handled manually**.   
 
 ---
 
@@ -92,6 +96,15 @@ This project was created as a learning exercise to deeply understand:
 
 ---
 
+## 🚫 Known Limitations
+
+* **Gemini API free tier has strict rate limits**
+* **Streaming may stop if quota is exceeded mid-response**
+* **Tool selection depends on model reasoning (not deterministic)**
+* **Conversation history is stored as plain text (no embeddings yet)**
+
+---
+
 ## 🚀 Getting Started
 
 ### 1️⃣ Download & navigate to the project directory:
@@ -114,7 +127,7 @@ pip install langgraph langchain langchain-google-genai google-generativeai googl
 
 ### 3️⃣ Add your API key:
 
-Create a .env file inside the project folder:
+Create a `.env` file inside the project folder:
 
 ```env
 GOOGLE_API_KEY=your_key_here
@@ -127,7 +140,7 @@ GOOGLE_API_KEY=your_key_here
 3. Select `Create Project` and name your project
 4. Click `Create API key` button once more
 5. **Select your project**, **name your API key** & click `Create key`
-6. Copy and paste the key inside **.env file**
+6. Copy and paste the key inside `.env` file
 
 
 ### 4️⃣ Run the assistant with terminal:
