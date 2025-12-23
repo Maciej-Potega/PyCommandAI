@@ -61,10 +61,16 @@ Sets a flag to safely end the chat loop.
 
 ## 🚀 Getting Started
 
-### 1️⃣ Navigate to the project directory with terminal:
+### 1️⃣ Download & navigate to the project directory:
 
 ```bash
 your_drive:\your_directory\...\PyCommandAI
+```
+**OR**
+
+### Clone the repository:
+```bash
+git clone https://github.com/Maciej-Potega/PyCommandAI.git
 ```
 
 ### 2️⃣ Install following dependencies with terminal:
@@ -84,10 +90,10 @@ GOOGLE_API_KEY=your_key_here
 **Where do I get Google API key?**
 
 1. Navigate to [Google AI Studio](https://aistudio.google.com/app/api-keys)
-2. Click **"Create API key"** button
-3. Select **"Create Project"** and name your project
-4. Click **"Create API key"** button once more
-5. **Select your project**, **name your API key** & click **"Create key"**
+2. Click `Create API key` button
+3. Select `Create Project` and name your project
+4. Click `Create API key` button once more
+5. **Select your project**, **name your API key** & click `Create key`
 6. Copy and paste the key inside **.env file**
 
 
@@ -96,7 +102,6 @@ GOOGLE_API_KEY=your_key_here
 ```python
 python main.py
 ```
-
 ---
 
 ## 🧪 Example Session
@@ -118,15 +123,18 @@ Assistant: Goodbye user!
 
 ## ⚠️ Help! My request limit expired! What do I do?
 
-Replace variable AI_MODEL_NAME with a different model name:
+In `setup.py` replace variable `AI_MODEL_NAME` with a different model name: 
 
+For example:
 ```python
 AI_MODEL_NAME = "gemini-2.5-flash-lite"
 ```
 
 Where do I find different model names?
 
-You can find them either on [Google AI Studio](https://aistudio.google.com/app/usage?timeRange=this-month) - in "Rate Limit" section or [Firebase](https://firebase.google.com/docs/ai-logic/models) 
+You can find them either on [Google AI Studio](https://aistudio.google.com/app/usage?timeRange=this-month) - in **"Rate Limit"** section OR [Firebase](https://firebase.google.com/docs/ai-logic/models) (better model descriptions)
+
+---
 
 ## 📅 Roadmap / Future Ideas
 
