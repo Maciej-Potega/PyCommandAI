@@ -22,7 +22,7 @@ Perfect as a learning project, a base for your own AI assistant, or a reference 
 
 ## ⚙️ How It Works
 
-The system is built around a LangChain Agent using function calling.
+The system is built around Gemini API (for now) with LangChain Agent using function calling.
 When the user sends input:
 
 1. The model decides whether to answer normally or call a tool
@@ -31,7 +31,7 @@ When the user sends input:
 
 3. The result is streamed back to the user
 
-4. The conversation is appended to **chat_file.txt**
+4. The conversation is appended to **chat_file.txt** (Which is automatically created when executed script for the first time or if file is not detected in the project directory)
 
 Example Tool:
 ```python 
@@ -40,7 +40,7 @@ def say_hello(name: str) -> str:
     """Useful for greeting a user"""
     #print("(Greeting) tool has been called!")
     return f"Hi {name}! I hope you're doing well today!\n" 
-``` 
+```
 ---
 
 ## 🛠️ Currently Tools Available:
@@ -61,15 +61,19 @@ Sets a flag to safely end the chat loop.
 
 ## 🚀 Getting Started
 
-### 1️⃣ Install following dependencies:
+### 1️⃣ Navigate to the project directory with terminal:
 
-**⚠️ IMPORTANT** - All the **dependencie were installed using UV** instead of pip
-
-```python
-uv add (List of the dependencies)
+```txt
+your_drive:\your_directory\...\PyCommandAI
 ```
 
-### 2️⃣ Add your API key:
+### 2️⃣ Install following dependencies with terminal:
+
+```python
+pip install langgraph langchain langchain-google-genai google-generativeai google-api-core python-dotenv
+```
+
+### 3️⃣ Add your API key:
 
 Create a .env file inside the project folder:
 
@@ -77,45 +81,54 @@ Create a .env file inside the project folder:
 GOOGLE_API_KEY=your_key_here
 ```
 
-### 3️⃣ Run the assistant:
+### 4️⃣ Run the assistant with terminal:
 
 ```python
-uv run main.py
+python main.py
 ```
 
 ## 🧪 Example Session
 
-* You: What time is it?
+```txt
+You: What time is it?
 
-* Assistant: The current local time is 18:58:50
+Assistant: The current local time is 18:58:50
 
-* You: Say hello to Maciej
+You: Say hello to Maciej
 
-* Assistant: Hi Maciej! I hope you're doing well today!
+Assistant: Hi Maciej! I hope you're doing well today!
 
-* You: quit
+You: quit
 
-* Assistant: Goodbye user!
-
+Assistant: Goodbye user!
+```
 ---
 
 ## 📅 Roadmap / Future Ideas
 
- * Note-taking tool
-
+### 🎯 Priorities 
+ 
  * File-reading tool
 
  * System info tool
+ 
+ * Note-taking tool
 
  * Math/calc tool
 
+ * Local model support (f.e Ollama)
+
+ * Memory embeddings (extend it's quality and stability)
+
+ * GUI Support
+
+### 🎉 4FUN Utilities
+
  * Joke generator tool
 
- * Mini-games (coin flip, dice roll)
-
- * Local model support (Ollama)
-
- * Memory embeddings
+ * Mini-games (coin flip, dice roll etc.)
+   
+ 
 
 
 
