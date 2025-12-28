@@ -11,29 +11,35 @@ Perfect as a learning project, a base for your own AI assistant, or a reference 
 
 ## 🧠 Features
 
-✔️ **Real-time streaming output**   
-✔️ **Persistent conversation history**   
-✔️ **Tool/function calling support**   
-✔️ **Custom Python functions the AI can execute**   
-✔️ **Clean modular structure**   
-✔️ **Easy to extend with new tools**
+✔️ Real-time streaming output  
+
+✔️ Persistent conversation history   
+
+✔️ Tool/function calling support   
+
+✔️ Custom Python functions the AI can execute 
+
+✔️ Clean modular structure   
+
+✔️ Easy to extend with new tools
 
 ---
 
 ## ⚙️ How It Works
 
 The system is **built around Gemini API (for now) with LangChain Agent using function calling**.
-When the user sends input:
 
-**1. The model decides whether to answer normally or call a tool**
+**When the user sends input:**
 
-**2. If a tool is called → the Python function is executed**
+1. The model decides whether to answer normally or call a tool
 
-**3. The result is streamed back to the user**
+2. If a tool is called → the Python function is executed
 
-**4. The conversation is appended to chat_file.txt (Which is automatically created when executed script for the first time or if file is not detected in the project directory)**
+3. The result is streamed back to the user
 
-Example Tool:
+4. The conversation is appended to chat_file.txt (Which is automatically created when executed script for the first time or if file is not detected in the project directory)
+
+**Example Tool:**
 ```python 
 @tool
 def say_hello(name: str) -> str:
@@ -47,61 +53,64 @@ def say_hello(name: str) -> str:
 
 This project intentionally **does NOT allow the agent to execute tools automatically**, because **Langchain is not always able and consistent in executing special functions by itself** → therefore the model is treated as a **decision engine**, **not an execution engine**.
 
-Instead:
+**Instead:**
 
-**1. The agent emits a function_call decision**
+1. The agent emits a function_call decision
 
-**2. Python code intercepts it**
+2. Python code intercepts it
 
-**3. In most cases the correct tool is executed manually**
+3. In most cases the correct tool is executed manually
 
-**4. The result is injected back into the response stream**
+4. The result is injected back into the response stream
 
-This approach:
+**This approach:**
 
-**✔️ avoids partial or inconsistent tool execution**  
-**✔️ gives full control over side effects**  
-**✔️ prevents infinite loops and recursion errors**  
-**✔️ makes debugging predictable**
+✔️ avoids partial or inconsistent tool execution  
+✔️ gives full control over side effects  
+✔️ prevents infinite loops and recursion errors  
+✔️ makes debugging predictable
 
 ### ⚠️ IMPORTANT NOTE!
 
-Inside `setup.py` script, variable `RULES_FOR_LANGCHAIN` is **just a prompt guidance for Langchain**, so it can **format the responses in the better way**. **IT DOESN'T 100% GUARANTEE** that the agent will **always select the correct tool**, **execute it at the right moment**, or **avoid emitting fallback responses when tool execution is intentionally handled manually**.   
+Inside `setup.py` script, variable `RULES_FOR_LANGCHAIN` is **just a prompt guidance for Langchain**, so it can format the responses in the better way. **IT DOESN'T 100% GUARANTEE** that the agent will **always select the correct tool**, **execute it at the right moment**, or **avoid emitting fallback responses when tool execution is intentionally handled manually**.   
 
 ---
 
 ## 🛠️ Currently Tools Available:
 
-**🔹 say_hello(name: str)**
-
+```python
+say_hello(name: str)
+```
 Greets the user with a friendly message.
 
-**🔹 check_time()**
-
+```python
+check_time()
+```
 Returns the current system time.
 
-**🔹 exit_chat()**
-
+```python
+exit_chat()
+```
 Sets a flag to safely end the chat loop.
 
 ---
 
 ## ❓ Why I made this project?
 
-This project was created as a learning exercise to deeply understand:
+**This project was created as a learning exercise to deeply understand:**
 
-* **How LLM agents reason**
-* **How tool calling works under the hood**
-* **How to safely integrate AI with real system actions**
+* How LLM agents reason
+* How tool calling works under the hood
+* How to safely integrate AI with real system actions
 
 ---
 
 ## 🚫 Known Limitations
 
-* **Gemini API free tier has strict rate limits**
-* **Streaming may stop if quota is exceeded mid-response**
-* **Tool selection depends on model reasoning (not deterministic)**
-* **Conversation history is stored as plain text (no embeddings yet)**
+* Gemini API free tier has strict rate limits
+* Streaming may stop if quota is exceeded mid-response
+* Tool selection depends on model reasoning (not deterministic)
+* Conversation history is stored as plain text (no embeddings yet)
 
 ---
 
