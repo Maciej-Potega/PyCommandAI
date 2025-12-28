@@ -31,7 +31,6 @@ CHAT_CONTENT_FILE = "chat_file.txt"
 model_active = {"active": False}
 
 def Model_Setup():
-    
     os.system('cls')
 
     if not GOOGLE_API_KEY:
@@ -45,14 +44,12 @@ def Model_Setup():
         print(f"⚠️ Could not verify Gemini API key: {e}")
         
     if(plugins_loaded["loaded"]):
-
-        from custom_tools import active_tools
+        from custom_tools import enabled_tools
         global agent_executor
         
         model = ChatGoogleGenerativeAI(temperature=0, model=AI_MODEL_NAME, google_api_key=GOOGLE_API_KEY, max_retries=0) #Temperature 0 to make sure we don't want it to be any randomness
         custom_prompt = ChatPromptTemplate.from_messages([("system", RULES_FOR_LANGCHAIN),("human", "{messages}")])
-        agent_executor = create_react_agent(model=model, tools=active_tools, prompt=custom_prompt)
-    
+        agent_executor = create_react_agent(model=model, tools=enabled_tools, prompt=custom_prompt)
         model_active["active"] = True
 
 def Chat_Setup():
