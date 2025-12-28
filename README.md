@@ -1,4 +1,4 @@
-# 🤖 AI Command-Line Assistant
+# 🤖 PyCommandAI
 
 **A lightweight terminal AI powered by LangChain + tool calling**
 
